@@ -8,22 +8,44 @@ const allInp = reactive({
   pass: '',
   number:''
 })
+const defultValue = reactive({
+  Name: 'shafikul',
+  Email: 'shafikul@gmail.com',
+  Password: '1234',
+  Number: '0123456789',
+})
 
+const signUp_page = ref(false)
 let view = ref(true)
-function submitFn(){
-  view.value = !view.value
+function submitFn(){ 
+  if ((allInp.name == 'shafikul')&& (allInp.email == 'shafikul@gmail.com')&& (allInp.pass == '1234') && (allInp.number == '0123456789')) {
+    view.value = !view.value
+  } else {
+    alert('Please Correct Input Value')
+    signUp_page.value = true
+  }
 }
+
+
 </script>
 
 <template>
+  <!-- Login page -->
     <login class="" v-if="!view"/>
-
+<!-- sign Up page -->
   <div class="Signup py-6 " v-else="view">
     <h1 class="text-4xl font-bold text-center uppercase my-5 text-white underline">Sign Up Page</h1>
     <div class="Login">
       <div class="grid grid-rows-3 grid-flow-col gap-4">
         <div class="row-span-3">
+          <p class="bg-gray-400 py-2">Defult Value: {{ defultValue }}</p>
           <p class="text-white ">{{ allInp }}</p>
+
+          <div class="alert rounded-lg text-center py-5 px-8rem" :class="signUp_page == true ? ' bg-[#ff0000bf]':' bg-green-600'">
+            <img class="imageAlert" :src="signUp_page == true ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/2219px-Warning.svg.png' : 'https://raw.githubusercontent.com/Shafikul-1/weatherapplication/main/depositphotos_208603374-stock-il-removebg-preview.png'" alt="">
+            <h1 class="font-bold text-3xl capitalize"> {{ signUp_page == true ? 'You have entered wrong input please enter correct input' : 'Welcome to our welcome page' }}</h1>
+          </div>
+
         </div>
         <div class="bg-[#1515156e] border-2 border-indigo-500 rounded-md shadow-md shadow-indigo-300 row-span-3 text-center">
           <h1 class="font-bold text-2xl text-[#ba53d5] underline py-4">Registration </h1>
@@ -63,6 +85,9 @@ function submitFn(){
 </template>
 
 <style scoped>
+.imageAlert{
+  padding: 0 16rem;
+}
 .Signup{
   background-position: fixed;
   background-size: cover;
