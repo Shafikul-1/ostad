@@ -13,7 +13,7 @@ function loginFn(){
 <template> 
     <HelloWorld v-if="!welcome"/>
     <div class="loginBg" v-else="welcome">
-        <h1 class="text-center font-bold text-4xl">Login Page</h1>
+        <h1 class="text-center font-bold text-4xl py-4">Login Page</h1>
         <div class="flex">
             <form @submit.prevent action="" class="bg-[#0000006e] w-1/3 p-10 rounded-md">
             <div class="">

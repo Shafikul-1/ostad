@@ -16,7 +16,7 @@ function warningBtn(allData){
 </script>
 
 <template>
-    <div class="relative" v-if="logShow == true">
+    <div class="relative" v-show="logShow == true">
         <div class="absolute top-16 border-4 px-[13rem] bg-[#ffc007e3] border-green-600 p-10 text-center rounded-md ">
             <h1 class="text-3xl font-bold mb-5 ">Are you willing to accept all our conditions?</h1>
             <p>If you agree to accept all our conditions then click "OK" button to proceed to the next page. If you don't agree to accept all the conditions then click "cancel"</p>
@@ -26,7 +26,7 @@ function warningBtn(allData){
             </div>
         </div>
     </div>
-    <loginVue v-else="logShow == false"/>
+    <loginVue v-show="logShow == false"/>
 </template>
 
 <style scoped>

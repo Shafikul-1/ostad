@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive } from 'vue';
-// import login from './login.vue';
 import warning from './warning.vue';
+
 const allInp = reactive({
   name: '',
   country: '',
@@ -13,19 +13,16 @@ const allInp = reactive({
 // let view = ref(true)
 let warn = ref(false)
 function submitFn(){
-  
   warn.value = true
   // view.value = !view.value
 }
-
-
 
 </script>
 
 <template>
   <warning v-if="warn == true"/>
     <!-- <login class="" v-if="!view"/> -->
-  <div class="Signup py-6 ">
+  <div class="Signup py-6 " >
     <h1 class="text-4xl font-bold text-center uppercase my-5 text-white underline">Sign Up Page</h1>
     <div class="Login">
       <div class="grid grid-rows-3 grid-flow-col gap-4">
