@@ -1,0 +1,10 @@
+*{
+  width: 100%;
+  padding-left: calc(0.2rem);
+  padding-right: calc(0.2rem);
+  padding-top: auto;
+  padding-bottom: auto;
+}
+img{
+  max-width: 100%;
+}
